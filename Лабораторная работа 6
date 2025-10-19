@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <locale.h>
+#define _USE_MATH_DEFINES
+#include <math.h>
+
+int main()
+{//задание 1
+	setlocale(LC_ALL, "RUS");
+	int year, ost4, ost100, ost400;
+	puts("Введите год");
+	scanf("%d", &year);
+	ost4 = year % 4;
+	ost100 = year % 100;
+	ost400 = year % 400;
+	if (ost4 == 0 && ost100 != 0 || ost400 == 0)
+	{
+		printf("Год %d високосный", year);
+	}
+	else
+	{
+		printf("Год %d не високосный", year);
+	}
+
+	
+}
+
+void number1()
+{//задание 2
+	setlocale(LC_ALL, "RUS");
+	int F, x, i;
+	puts("Введите x");
+	scanf("%d", &x);
+	F = x <= 3 ? (-x * x - 3 * x + 9) : (1 / pow(x, 3) - 6);
+	printf("F = %d", F);
+	getchar();
+	
+}
