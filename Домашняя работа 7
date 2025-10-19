@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <locale.h>
+
+
+void printKopeyki(int num) {//28 вариант
+    printf("%d ", num);
+
+    if (num >= 11 && num <= 19) {
+        printf("копеек\n");
+        return;
+    }
+
+    int last_digit = num % 10;
+
+    switch (last_digit) {
+    case 1:
+        printf("копейка\n");
+        break;
+    case 2:
+    case 3:
+    case 4:
+        printf("копейки\n");
+        break;
+    default:
+        printf("копеек\n");
+        break;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RUS");
+    int num;
+
+    printf("Введите число от 1 до 99: ");
+    scanf("%d", &num);
+
+    if (num < 1 || num > 99) {
+        printf("Число должно быть в диапазоне от 1 до 99.\n");
+        return 1;
+    }
+
+    printKopeyki(num);
+
+    return 0;
+}
