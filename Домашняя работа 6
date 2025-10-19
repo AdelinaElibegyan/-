@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <locale.h>
+#define _USE_MATH_DEFINES
+#include <math.h>
+
+int main()
+{
+	setlocale(LC_ALL, "RUS");
+	int hours, min, sec, s;
+	puts("Введите секунды");
+	scanf("%d", &s);
+	hours = s / 3600;
+	min = (s % 3600) / 60;
+	sec = s % 60;
+	if (s < 3600) {printf(" % d минут, % d секунд", min, sec); }
+	else { printf("%d часов, %d минут, %d секунд", hours, min, sec); }
+	return 0;
+}
